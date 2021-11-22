@@ -37,8 +37,8 @@ namespace zoo_management.Repositories
                 .Where(animal => search.Search == null ||
                                  (animal.Species.ToLower().Contains(search.Search)) ||
                                  (animal.Classification.ToLower().Contains(search.Search)) ||
-                                 (animal.Name.ToLower().Contains(search.Search)) ||
-                                 SqlFunctions.StringConvert((double) animal.Age).Contains(search.Search)
+                                 (animal.Name.ToLower().Contains(search.Search)) 
+                                 // SqlFunctions.StringConvert((double) animal.Age).Contains(search.Search)
                     // (animal.Age.Equals(Int32.Parse(search.Search)))
                     // (animal.DateAcquired.ToString("dd-MM-YYYY").Contains(search.Search))
                 )
@@ -54,8 +54,8 @@ namespace zoo_management.Repositories
                             (
                                 a.Species.ToLower().Contains(search.Search) ||
                                 a.Classification.ToLower().Contains(search.Search) ||
-                                a.Name.ToLower().Contains(search.Search) ||
-                                SqlFunctions.StringConvert((double) a.Age).Contains(search.Search)
+                                a.Name.ToLower().Contains(search.Search)
+                                // SqlFunctions.StringConvert((double) a.Age).Contains(search.Search)
                                 // a.Age.Equals(Int32.Parse(search.Search))
                                 // a.DateAcquired.ToString("dd-MM-YYYY").Contains(search.Search)
                             ));
